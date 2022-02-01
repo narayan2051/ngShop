@@ -1,0 +1,6 @@
+<div class="inventory-list">
+
+    <div *ngFor='let item of inventoryItems'>
+        <ngshop-inventory-list-item [item]="item" (addItemEvent)="onAddItemEvent($event)"></ngshop-inventory-list-item>
+    </div>
+</div>

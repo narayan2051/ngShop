@@ -1,0 +1,16 @@
+<div class="cart-view">
+    <div class="cart-view-header">
+        <h2>Number of items {{cart?.numberOfCartItems}}</h2>
+        <h3>Total: {{cart?.cartTotal | currency}}</h3>
+    </div>
+    <div class="cart-view-item-container">
+        <mat-list>
+            <mat-list-item *ngFor="let item of (cart$ | async)?.items" appToggleFocus>
+                <mat-icon class="delete" (click)="onDeleteItem(item)">delete_forever</mat-icon>
+                <div mat-line>{{item?.itemName}}</div>
+                <div mat-line class="sub-line">{{item?.itemCost | currency}}</div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="add-item-form">
+
+    <form id="add-item-form" [formGroup]="addItemFormGroup" (ngSubmit)="addItem()">
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="item name" formControlName="itemName" id="item-name" autoComplete="off" />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="item cost" formControlName="itemCost" id="item-cost" autoComplete="off" />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <textarea matInput placeholder="Item Description" formControlName="itemDesc" id="item-desc"></textarea>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Item URI" formControlName="itemImageUri" id="item-image-uri" />
+            </mat-form-field>
+        </p>
+        <button mat-raised-button [disabled]="!addItemFormGroup.valid" id="submit-item">Submit</button>
+    </form>
+</div>

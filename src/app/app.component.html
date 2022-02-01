@@ -1,0 +1,33 @@
+<div class="app-shell">
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav class="sidenav">
+      <h2> Menu </h2>
+      <ul class="menu-list">
+        <li>
+          <a routerLink="/inventory">Buy Bait</a>
+        </li>
+        <li>
+          <a routerLink="/cart">View Cart</a>
+        </li>
+      </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <div class="toolbar-items-container">
+          <div class="toolbar-item">
+            <button mat-mini-fab color="accent" (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+            {{title}}
+          </div>
+          <div class="toolbar-item action">
+            <app-cart-pill></app-cart-pill>
+          </div>
+        </div>
+      </mat-toolbar>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
